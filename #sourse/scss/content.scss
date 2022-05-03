@@ -5,15 +5,22 @@
         @include adaptiv-value('margin-bottom', 70, 30);
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         align-content: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
 
         &:nth-child(odd) {
             flex-direction: row;
+            text-align: right;
         }
         &:nth-child(even) {
             flex-direction: row-reverse;
+            text-align: left;
+        }
+
+        @media screen and (max-width: 1145px) {
+            text-align: center !important;
+            
         }
     }
     &__item:nth-child(odd) &__number {
@@ -27,12 +34,35 @@
         font-size: 8rem;
         font-family: 'Syne Mono', monospace;
         opacity: .5;
+
+        &._yellow {
+            color: #FFBE08;
+        }
+        &._red {
+            color: #FF0C0C;
+        }
+        &._blue {
+            color: #2E51E5;
+        }
+        &._green {
+            color: #2EE59D;
+        }
+        &._purple {
+            color: #7700FF;
+        }
+        &._orange {
+            color: #FF4200;
+        }
+        &._pink {
+            color: #E52EE3;
+        }
     }
 
     &__text {
         font-size: 1.5rem;
         font-family: 'Raleway', sans-serif;
         line-height: initial;
+        flex: 1 1 85%;
     }
 
     &__download {

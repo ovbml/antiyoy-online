@@ -1,7 +1,7 @@
 @import "adaptive property.scss";
 
 html {
-    @include adaptiv-value('font-size', 32, 8);
+    @include adaptiv-value('font-size', 32, 16);
     color: #101828;
 }
 
