@@ -1,0 +1,59 @@
+@import "adaptive property.scss";
+
+.header {
+    position: relative;
+    height: calc(621.31 / 1440 * 100vw);
+    min-height: 200px;
+    background-color: #000;
+    @include adaptiv-value('margin-bottom', 70, 30);
+
+    &__container {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        z-index: 999;
+    }
+
+    &__image {
+        background-image: url("../img/background-image.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .4;
+        z-index: 1;
+        box-shadow: inset 0px 0px 250px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    &__title {
+        font-size: 4rem;
+        @include adaptiv-value('margin-bottom', 30, 15);
+    }
+    &__subtitle {
+        font-size: 2rem;
+    }
+    &__title,
+    &__subtitle {
+        font-weight: bold;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        text-shadow: 5px 5px 30px rgba(244, 245, 247, 0.5);
+    }
+    &__yiotro {
+        font-family: 'Comfortaa', cursive;
+        position: absolute;
+        @include adaptiv-value('right', 30, 15);
+        @include adaptiv-value('bottom', 30, 15);
+        z-index: 1;
+        color: #fff;
+        font-size: 1.5rem;
+        opacity: 0.8;
+    }
+}

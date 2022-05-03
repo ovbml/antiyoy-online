@@ -1,0 +1,95 @@
+@import "adaptive property.scss";
+
+.footer {
+    background-color: #161819;
+    color: #F4F5F7;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+.footer__ {
+    &title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        @include adaptiv-value('margin-top', 50, 25);
+        margin-bottom: 10px;
+    }
+
+    &line {
+        text-align: center;
+        @include adaptiv-value('margin-bottom', 40, 15);
+
+        & div {
+            display: inline-block;
+            border-radius: .3em;
+            height: 1.5px;
+            @include adaptiv-value('width', 100, 20);
+            background-color: #F4F5F7;
+        }
+    }
+
+    &link {
+        color: #E7805E;
+        position: relative;
+        
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 1px;
+            background-color: #5ec5e7;
+            opacity: 0;
+            transition: bottom  .15s ease,
+                        left    .3s  ease,
+                        width   .3s  ease,
+                        opacity .15s ease;
+        }
+        &:hover::after {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            opacity: 1;
+        } 
+    }
+    &links {
+        @include adaptiv-value('margin-bottom', 30, 20);
+        &-title {
+            font-weight: bold;
+            @include adaptiv-value('margin-bottom', 30, 20);
+        }
+        & div {
+            @include adaptiv-value('margin-bottom', 20, 10);
+        }
+    }
+
+    &yiotro-desc {
+        margin-bottom: 20px;
+        line-height: initial;
+    }
+
+    &q {
+        @include adaptiv-value('padding-top', 20, 10);
+        @include adaptiv-value('padding-bottom', 20, 10);
+        @include adaptiv-value('padding-left', 50, 15);
+        border-left: solid #FFBE08;
+        @include adaptiv-value('border-left-width', 3, 2);
+        &-author {
+            @include adaptiv-value('margin-top', 50, 15);
+            @include adaptiv-value('margin-bottom', 50, 30);
+            text-align: right;
+            font-family: 'Comfortaa', cursive;
+            font-weight: bold;
+        }
+    }
+}
+
+/*
+        font-family: 'Comfortaa', cursive;
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-family: 'Syne Mono', monospace;
+*/

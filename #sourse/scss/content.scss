@@ -1,0 +1,61 @@
+@import "adaptive property.scss";
+
+.main {
+    &__item {
+        @include adaptiv-value('margin-bottom', 70, 30);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        flex-wrap: nowrap;
+
+        &:nth-child(odd) {
+            flex-direction: row;
+        }
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+    &__item:nth-child(odd) &__number {
+        @include adaptiv-value('margin-right', 50, 10);
+    }
+    &__item:nth-child(even) &__number {
+        @include adaptiv-value('margin-left', 50, 10);
+    }
+
+    &__number {
+        font-size: 8rem;
+        font-family: 'Syne Mono', monospace;
+        opacity: .5;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        font-family: 'Raleway', sans-serif;
+        line-height: initial;
+    }
+
+    &__download {
+        text-align: center;
+        @include adaptiv-value('margin-bottom', 70, 30);
+
+        a {
+            color: #101828;
+            @include adaptiv-value('padding-left', 35, 15);
+            @include adaptiv-value('padding-right', 35, 15);
+            @include adaptiv-value('padding-top', 12, 5);
+            @include adaptiv-value('padding-bottom', 12, 5);
+            background-color: #45e689;
+            @include adaptiv-value('border-radius', 11, 7);
+            font-family: 'Raleway', sans-serif;
+            font-weight: medium;
+            font-size: 1.5rem;
+            touch-action: manipulation;
+            border: 2px solid #45e689;
+
+            &:hover {
+                border: 2px solid #27AE60;
+            }
+        }
+    }
+}

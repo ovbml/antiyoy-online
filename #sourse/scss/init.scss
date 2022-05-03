@@ -1,0 +1,17 @@
+@import "adaptive property.scss";
+
+html {
+    @include adaptiv-value('font-size', 32, 8);
+    color: #101828;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 1px;
+    @include adaptiv-value('padding-left', 40, 15);
+    @include adaptiv-value('padding-right', 40, 15);
+
+}
