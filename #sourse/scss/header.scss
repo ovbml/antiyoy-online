@@ -3,7 +3,7 @@
 .header {
     position: relative;
     height: calc(621.31 / 1440 * 100vw);
-    min-height: 200px;
+    min-height: 350px;
     background-color: #000;
     @include adaptiv-value('margin-bottom', 70, 30);
 
