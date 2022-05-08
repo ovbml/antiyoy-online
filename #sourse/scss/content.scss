@@ -22,6 +22,20 @@
             text-align: center !important;
             
         }
+
+        &._anim-item {
+            overflow: hidden;
+            position: relative;
+            @include adaptiv-value('top', 100, 50);
+            opacity: 0;
+            transition: opacity .3s linear,
+                        top .3s ease-in-out;
+
+        }
+        &._anim-active {
+            top: 0;
+            opacity: 1;
+        }
     }
     &__item:nth-child(odd) &__number {
         @include adaptiv-value('margin-right', 50, 10);

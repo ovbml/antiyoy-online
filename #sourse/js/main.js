@@ -1,3 +1,5 @@
+// @prepros-prepend "scroll animation.js"
+
 // to colorize numbers
 Array.prototype.getRandomELement = function() {
     return this[Math.floor(Math.random() * this.length)];

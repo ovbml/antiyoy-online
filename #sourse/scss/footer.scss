@@ -8,12 +8,66 @@
 }
 
 .footer__ {
-    &title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 2rem;
-        text-align: center;
+    &left-right {
         @include adaptiv-value('margin-top', 50, 25);
-        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+
+    }
+    @media screen and (max-width: 700px) {
+        &left-right {
+            display: block;
+        }
+
+        &left {
+            @include adaptiv-value('margin-bottom', 50, 25);
+        }
+    }
+    &left {
+        flex: 0 1 50%;
+    }
+    &right {
+        flex: 0 1 50%;
+    }
+
+    &item-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        @include adaptiv-value('margin-bottom', 20, 10);
+        @include adaptiv-value('padding-bottom', 20, 10);
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+
+        &._anim-item {
+            &::after {
+                width: 0;
+                transition: width .3s ease-in-out .2s;
+            }
+        }
+        &._anim-active {
+            &::after {
+                @include adaptiv-value('width', 100, 60);
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            @include adaptiv-value('left', 3, 2);
+            @include adaptiv-value('height', 3, 2);
+            background-color: #e7d35e;
+            border-radius: .3em;
+        }
+    }
+
+    &title {
+        @include adaptiv-value('margin-top', 50, 25);
     }
 
     &line {
@@ -30,7 +84,7 @@
     }
 
     &link {
-        color: #E7805E;
+        color: #5ec5e7;
         position: relative;
         
         &::after {
@@ -40,8 +94,8 @@
             left: 50%;
             bottom: -5px;
             width: 0;
-            height: 1px;
-            background-color: #5ec5e7;
+            @include adaptiv-value('height', 3, 1);
+            background-color: #E7805E;
             opacity: 0;
             transition: bottom  .15s ease,
                         left    .3s  ease,
@@ -49,19 +103,18 @@
                         opacity .15s ease;
         }
         &:hover::after {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            opacity: 1;
+            left: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            opacity: 1 !important;
         } 
+    }
+    &links &link {
+        color: #F4F5F7;
     }
     &links {
         @include adaptiv-value('margin-bottom', 30, 20);
-        &-title {
-            font-weight: bold;
-            @include adaptiv-value('margin-bottom', 30, 20);
-        }
-        & div {
+        & div:not(:first-child) {
             @include adaptiv-value('margin-bottom', 20, 10);
         }
     }
@@ -71,18 +124,14 @@
         line-height: initial;
     }
 
-    &q {
-        @include adaptiv-value('padding-top', 20, 10);
-        @include adaptiv-value('padding-bottom', 20, 10);
-        @include adaptiv-value('padding-left', 50, 15);
-        border-left: solid #FFBE08;
-        @include adaptiv-value('border-left-width', 3, 2);
-        &-author {
+    &yiotro {
+        font-family: 'Comfortaa', cursive;
+        font-weight: bold;
+
+        &-container {
             @include adaptiv-value('margin-top', 50, 15);
-            @include adaptiv-value('margin-bottom', 50, 30);
+            @include adaptiv-value('margin-bottom', 30, 10);
             text-align: right;
-            font-family: 'Comfortaa', cursive;
-            font-weight: bold;
         }
     }
 }

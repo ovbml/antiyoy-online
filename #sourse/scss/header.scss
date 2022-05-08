@@ -2,8 +2,8 @@
 
 .header {
     position: relative;
-    height: calc(621.31 / 1440 * 100vw);
-    min-height: 350px;
+    height: 100vh;
+    // min-height: 350px;
     background-color: #000;
     @include adaptiv-value('margin-bottom', 70, 30);
 
@@ -30,6 +30,13 @@
         opacity: .4;
         z-index: 1;
         box-shadow: inset 0px 0px 250px 30px rgba(0, 0, 0, 0.5);
+
+        &._anim-item {
+            transition: box-shadow .4s ease;
+        }
+        &._anim-item:not(._anim-active) {
+            box-shadow: inset 0px 0px 500px 100px rgba(0, 0, 0, 0.8) !important;
+        }
     }
 
     &__title {
@@ -44,7 +51,13 @@
         font-weight: bold;
         color: #fff;
         font-family: 'Montserrat', sans-serif;
-        text-shadow: 5px 5px 30px rgba(244, 245, 247, 0.5);
+
+        &._anim-item {
+            transition: text-shadow .5s ease;
+        }
+        &._anim-active {
+            text-shadow: 5px 5px 30px rgba(244, 245, 247, 0.5);
+        }
     }
     &__yiotro {
         font-family: 'Comfortaa', cursive;
